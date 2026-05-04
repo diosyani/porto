@@ -14,24 +14,6 @@
     <!-- Floating Background Orbs -->
 
 
-    <!-- Loading Screen -->
-    <div id="loader">
-        <div class="loader-content">
-            <h1 class="gradient-text">Dio Syani Dimastia</h1>
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-    <script>
-        // Inline Fail-safe for Loader
-        setTimeout(function() {
-            var l = document.getElementById('loader');
-            if (l && !l.classList.contains('fade-out')) {
-                l.classList.add('fade-out');
-                setTimeout(function() { l.style.display = 'none'; }, 800);
-            }
-        }, 5000);
-    </script>
-
     <div id="scroll-progress"></div>
 
 
