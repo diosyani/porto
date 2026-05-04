@@ -1,5 +1,16 @@
 let mouse = { x: 0, y: 0 };
 const heroContent = document.querySelector('.hero-content');
+const loader = document.getElementById('loader');
+
+// Hide Loader when Page is Ready
+window.addEventListener('load', () => {
+    if (loader) {
+        loader.classList.add('fade-out');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 800); // Wait for transition
+    }
+});
 
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
