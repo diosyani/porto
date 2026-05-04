@@ -2,15 +2,21 @@ let mouse = { x: 0, y: 0 };
 const heroContent = document.querySelector('.hero-content');
 const loader = document.getElementById('loader');
 
-// Hide Loader when Page is Ready
-window.addEventListener('load', () => {
-    if (loader) {
+// Hide Loader Function
+function hideLoader() {
+    if (loader && !loader.classList.contains('fade-out')) {
         loader.classList.add('fade-out');
         setTimeout(() => {
             loader.style.display = 'none';
-        }, 800); // Wait for transition
+        }, 800);
     }
-});
+}
+
+// Hide Loader when DOM is Ready
+window.addEventListener('DOMContentLoaded', hideLoader);
+
+// Fail-safe: Hide loader after 3 seconds regardless
+setTimeout(hideLoader, 3000);
 
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
